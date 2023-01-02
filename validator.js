@@ -122,10 +122,10 @@ function validation(){
     }
 }
 
-function runner(){
-    alert('changing website to next page')
-    window.location.href = "http://youtube.com";
-}
+// function runner(){
+//     alert('changing website to next page')
+//     window.location.href = "http://youtube.com";
+// }
 
 function uservalidation(name){
     isWhitespace = /^(?=.*\s)/;
