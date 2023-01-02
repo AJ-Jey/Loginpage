@@ -7,13 +7,9 @@
 
 <body>
     <h1 class="head">
-        <center>Accounting Creation!!!</center>
+        <center>Ajai J Login Page</center>
     </h1>
     <form id="formsignup" name="signup" method="post" action="" onsubmit="return validation()">
-        <h3 class="log">
-            <center>Log In</center>
-        </h3><br>
-
         <input type="text" id="uname" value="" name="Username" class="uname inputs" placeholder="Username"
             autocomplete="off">
         <p><span id="errname" class="errclr"></span></p>
@@ -27,9 +23,11 @@
         <p><input type="password" id="uconfirm" class="uconfirm inputs" placeholder="Confirm Password"></p>
         <span id="errcheck" class="errclr"></span>
 
-        <!-- <p><input type="checkbox" id = "ucheck" class="uchek">I agree to the terms and conditions</p> -->
+        <p><input type="checkbox" id="ucheck" class="ucheck">I agree to the terms and conditions</p>
+        <span id="errbox" class="errclr"></span>
 
         <p><input type="submit" value="Log In" width="300px" class="submit"></p>
+
     </form>
     <script src="validator.JS"></script>
 </body>
