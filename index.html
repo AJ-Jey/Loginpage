@@ -7,9 +7,9 @@
 
 <body>
     <h1 class="head">
-        <center>Ajai J Login Page</center>
+        <center>Ajai J Signup Page</center>
     </h1>
-    <form id="formsignup" name="signup" method="post" action="" onsubmit="return validation()">
+    <form id="formsignup" name="signup" method="post" action="" onsubmit="return validation();">
         <input type="text" id="uname" value="" name="Username" class="uname inputs" placeholder="Username"
             autocomplete="off">
         <p><span id="errname" class="errclr"></span></p>
@@ -17,7 +17,7 @@
         <p><input type="text" id="umail" class="umail inputs" placeholder="Email" autocomplete="off"></p>
         <span id="errmail" class="errclr"></span>
 
-        <p><input type="password" id="upass" class="upass inputs" placeholder="Password"></p>
+        <p><input type="password" id="upass" class="upass inputs" autocomplete="off" placeholder="Password"></p>
         <span id="errpass" class="errclr"></span>
 
         <p><input type="password" id="uconfirm" class="uconfirm inputs" placeholder="Confirm Password"></p>
@@ -26,7 +26,7 @@
         <p><input type="checkbox" id="ucheck" class="ucheck">I agree to the terms and conditions</p>
         <span id="errbox" class="errclr"></span>
 
-        <p><input type="submit" value="Log In" width="300px" class="submit"></p>
+        <p><input type="submit" value="Signup" width="300px" class="submit" ></p>
 
     </form>
     <script src="validator.JS"></script>

@@ -1,4 +1,5 @@
 function validation(){
+    runned = false
     f = 1
     isContainsSymbol = /^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹])/;
     document.querySelector("#errname").style.display = "none"
@@ -73,7 +74,7 @@ function validation(){
         else if(chr == "2"){
             f=0
             document.querySelector("#errpass").style.display = "block"
-            document.querySelector("#errpass").innerHTML = "Password must contain lowercase"
+            document.querySelector("#errpass").innerHTML = "Password must contain uppercase"
         }
         else if(chr == "3"){
             f=0
@@ -111,13 +112,19 @@ function validation(){
         document.querySelector("#errbox").style.display = "block"
         document.querySelector("#errbox").innerHTML = "Please agree to the terms and conditions to continue" 
     }   
-
     if (f==1){
+        runned = true
+        runner()
         return true;
     }    
     else{
         return false;
     }
+}
+
+function runner(){
+    alert('changing website to next page')
+    window.location.href = "http://youtube.com";
 }
 
 function uservalidation(name){
