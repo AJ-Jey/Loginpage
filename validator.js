@@ -111,21 +111,17 @@ function validation(){
         f=0
         document.querySelector("#errbox").style.display = "block"
         document.querySelector("#errbox").innerHTML = "Please agree to the terms and conditions to continue" 
-    }   
+    }  
+    
+
     if (f==1){
         runned = true
-        runner()
         return true;
     }    
     else{
         return false;
     }
 }
-
-// function runner(){
-//     alert('changing website to next page')
-//     window.location.href = "http://youtube.com";
-// }
 
 function uservalidation(name){
     isWhitespace = /^(?=.*\s)/;
@@ -169,3 +165,4 @@ function passvalidation(check){
         return "4"  
     }
 }
+

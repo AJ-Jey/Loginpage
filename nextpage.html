@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="secondstyle.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1><center>Ajai J Login Page</center></h1>
+    <form id="formlogin" class="formlogin" name="login" method="post" action="" onsubmit="">
+        <input type="text" class="umailuser inputs" id="umailuser" name="useremail" placeholder="👤 Username/Email" autocomplete="off">
+        <p><span id="erruseremail" class="errclr"></span></p>
+
+        <p><input type="text" id="upassword" class="upassword inputs" name="password" placeholder="🔒 Password" autocomplete="off"></p>
+        <span id="errpassword" class="errclr"></span>
+
+        <p><input type="submit" class="submitbtn" id="submitbtn" name="submit" value="Submit" onclick=""></p>
+    </form>
 </body>
 </html>
