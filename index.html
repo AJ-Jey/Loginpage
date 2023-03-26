@@ -4,30 +4,101 @@
 <head>
     <link rel="stylesheet" href="styler.css">
     <title>Signup Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <h1><center>Ajai J Signup Page</center></h1>
-    <form id="formsignup" name="signup" method="post" action="nextpage.html" onsubmit="return validation();">
-        <input type="text" id="uname" value="" name="Username" class="uname inputs" placeholder="👤Username"
-            autocomplete="off">
-        <p><span id="errname" class="errclr"></span></p>
+    <h1>
+        <center>Ajai J Signup Page</center>
+    </h1>
 
-        <p><input type="text" id="umail" class="umail inputs" placeholder="✉️ Email" autocomplete="off"></p>
-        <span id="errmail" class="errclr"></span>
+    <form class="needs-validation was-validated" id="formsignup" name="signup" method="post" onsubmit="" action="">
 
-        <p><input type="password" id="upass" class="upass inputs" autocomplete="off" placeholder="🔒Password"></p>
-        <span id="errpass" class="errclr"></span>
+        <div class="form-floating mb-3">
+            <input type="text" id="uname" value="" pattern="\w{4,15}" name="Username" class="uname inputs form-control"
+                required="" placeholder="👤Username" autocomplete="off">
+            <label class="form-label" for="uname">👤Username</label>
+            <div class="invalid-feedback">Invalid Username</div>
+        </div>
 
-        <p><input type="password" id="uconfirm" class="uconfirm inputs" placeholder="🔐 Confirm Password"></p>
-        <span id="errcheck" class="errclr"></span>
+        <div class="form-floating mb-3">
+            <input type="email" id="umail" class="umail inputs form-control" placeholder="✉️ Email" autocomplete="off"
+                required="">
+            <label for="umail">✉️ Email</label>
+            <div class="invalid-feedback">Invalid Email</div>
+        </div>
 
-        <p><input type="checkbox" id="ucheck" class="ucheck">I agree to the terms and conditions</p>
-        <span id="errbox" class="errclr"></span>
+        <!-- <div class="form-floating mb-3">
+            <input type="password" id="upass" pattern="(?=.*\d)(?=.*[A-Z])(?=.*\W).{4,}"
+                class="upass inputs form-control" placeholder="🔒Password" required="" autocomplete="off">
+            <label for="upass">🔒Password</label>
+            <div class="invalid-feedback">Invalid Password</div>
+        </div>
 
-        <p><input type="submit" value="Signup" width="300px" class="submit" onclick=""></p>
+        <div class="form-floating mb-3">
+            <input type="password" id="uconfirm" pattern="" class="uconfirm inputs form-control "
+                placeholder="🔐 Confirm Password" required="">
+            <label for="uconfirm">🔐 Confirm Password</label>
+            <span id="errcheck" class="errclr"></span>
+        </div> -->
+
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password" name="password" required
+                placeholder="🔒Password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*\W).{4,}">
+            <label for="password">🔒Password</label>
+            <div class="invalid-feedback">
+                Please enter a password
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="confirm-password" name="confirm-password" required=""
+                placeholder="🔐 Confirm Password">
+            <label for="confirm-password">🔐 Confirm Password</label>
+            <div class="invalid-feedback">
+                Please confirm your password
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required="">
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+        </div>
+
+
+        <p><input type="submit" value="Signup" width="300px" class="btn btn-primary" onclick="validation();"
+                required=""></p>
 
     </form>
-    <script src="validator.JS"></script>
+    <script>
+        // Get the password and confirm password fields
+        const passwordField = document.getElementById('password');
+        const confirmPasswordField = document.getElementById('confirm-password');
+
+        // Add an event listener to the confirm password field that checks for equality
+        confirmPasswordField.addEventListener('input', function () {
+            if (passwordField.value === confirmPasswordField.value) {
+                confirmPasswordField.setCustomValidity('');
+                confirmPasswordField.classList.add('is-valid');
+                confirmPasswordField.classList.remove('is-invalid');
+            } else {
+                confirmPasswordField.setCustomValidity('Passwords do not match');
+                confirmPasswordField.classList.add('is-invalid');
+                confirmPasswordField.classList.remove('is-valid');
+            }
+        });
+    </script>
+    <script src="validator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
