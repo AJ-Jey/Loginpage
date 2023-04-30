@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styler.css">
+    <link rel="stylesheet" href="Assets/CSS/styler.css">
     <title>Signup Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="Assets/Images/logo.png">
 </head>
 <body>
+    <div class="container-fluid">
+        <header class="header1">
+            <a href="index.html">
+                <img src="Assets/Images/logo.png" style="width: 8%";>
+            </a>
+            <div class="link">
+                <a class="nav-link" href="index.html">signup</a>
+                <a class="nav-link" href="login.html">login</a>
+            </div>
+        </header>
     <h1>
-        <center>Ajai J Signup Page</center>
+        <center>Signup Page</center>
     </h1>
 
-    <form class="needs-validation was-validated" id="formsignup" name="signup" method="post" onsubmit="" action="">
-
+    <form class="needs-validation was-validated" id="formsignup" name="signup" method="post" onsubmit="" action="connect.php">
         <div class="form-floating mb-3">
-            <input type="text" id="uname" value="" pattern="\w{4,15}" name="Username" class="uname inputs form-control"
-                required="" placeholder="👤Username" autocomplete="off">
-            <label class="form-label" for="uname">👤Username</label>
+            <input type="text" id="uname Username" value="" pattern="\w{4,15}" name="Username" class="uname inputs form-control"
+                required="" placeholder="Username" autocomplete="off">
+            <label class="form-label" for="uname">Username</label>
             <div class="invalid-feedback">Invalid Username</div>
         </div>
 
         <div class="form-floating mb-3">
-            <input type="email" id="umail" class="umail inputs form-control" placeholder="✉️ Email" autocomplete="off"
-                required="">
-            <label for="umail">✉️ Email</label>
+            <input type="email" id="umail Email" class="umail inputs form-control" placeholder="Email" autocomplete="off" required="" name="Email">
+            <label for="umail">Email</label>
             <div class="invalid-feedback">Invalid Email</div>
         </div>
 
         <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="password" name="password" required
-                placeholder="🔒Password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*\W).{4,}">
-            <label for="password">🔒Password</label>
+            <input type="password" class="form-control" id="password" name="Password" required
+                placeholder="Password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*\W).{4,}">
+            <label for="password">Password</label>
             <div class="invalid-feedback">
                 Please enter a password
             </div>
         </div>
         <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="confirm-password" name="confirm-password" required=""
-                placeholder="🔐 Confirm Password">
-            <label for="confirm-password">🔐 Confirm Password</label>
+            <input type="password" class="form-control" id="confirm-password" name="Confirm Password" required=""
+                placeholder="Confirm Password">
+            <label for="confirm-password">Confirm Password</label>
             <div class="invalid-feedback">
                 Please confirm your password
             </div>
         </div>
         <div class="mb-3">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required="">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required="" name="Agreement">
                 <label class="form-check-label" for="invalidCheck">
                     Agree to terms and conditions
                 </label>
@@ -56,17 +65,14 @@
             </div>
         </div>
 
-
         <p><input type="submit" value="Signup" width="300px" class="btn btn-primary" onclick="validation();"
                 required=""></p>
-
+    </div>
     </form>
     <script>
-        // Get the password and confirm password fields
         const passwordField = document.getElementById('password');
         const confirmPasswordField = document.getElementById('confirm-password');
 
-        // Add an event listener to the confirm password field that checks for equality
         confirmPasswordField.addEventListener('input', function () {
             if (passwordField.value === confirmPasswordField.value) {
                 confirmPasswordField.setCustomValidity('');
@@ -78,11 +84,13 @@
                 confirmPasswordField.classList.remove('is-valid');
             }
         });
+        function displayMessage() {
+            alert("Signup Success!!!")
+        }
     </script>
-    <script src="validator.js"></script>
+    <script src="Assets/JS/validator.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

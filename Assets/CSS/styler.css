@@ -58,3 +58,16 @@ h3 {
 .errclr {
     color: red;
 }
+
+.link{
+    justify-content: space-evenly;
+    display: flex;
+    gap: 15px;
+    font-size: 120%;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
